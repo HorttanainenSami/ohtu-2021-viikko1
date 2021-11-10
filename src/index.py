@@ -1,4 +1,3 @@
-import unittest
 from varasto import Varasto
 
 
@@ -22,6 +21,11 @@ def main():
     print("Otetaan 3.14")
     mehua.ota_varastosta(3.14)
     print(f"Mehuvarasto: {mehua}")
+    virhetilanteita_varasto_tilavuus()
+    virhetilanteita_varasto_saldo(mehua, olutta)
+
+
+def virhetilanteita_varasto_tilavuus():
 
     print("Virhetilanteita:")
     print("Varasto(-100.0);")
@@ -31,6 +35,8 @@ def main():
     print("Varasto(100.0, -50.7)")
     huono = Varasto(100.0, -50.7)
     print(huono)
+
+def virhetilanteita_varasto_saldo(mehua, olutta):
 
     print(f"Olutvarasto: {olutta}")
     print("olutta.lisaa_varastoon(1000.0)")
@@ -53,7 +59,5 @@ def main():
     saatiin = mehua.ota_varastosta(-32.9)
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
-
-
 if __name__ == "__main__":
     main()
